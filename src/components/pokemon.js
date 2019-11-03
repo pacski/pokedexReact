@@ -1,11 +1,8 @@
 import React from 'react';
 import {
     BrowserRouter as Router,
-    Switch,
-    Route,
     Link
   } from "react-router-dom";
-import PokemonDetails from './pokemonDetails';
 import Loader from './loader'
 
 
@@ -27,12 +24,8 @@ class Pokemon extends React.Component{
 
         const {name, url} = this.props
         const indexPokemonStep1 = url.split('/');
-        console.log(indexPokemonStep1);
         const indexPokemon = indexPokemonStep1[6]
-        console.log(indexPokemonStep1[6]);
-        console.log(indexPokemon);
         const imageUrl = `/sprites/sprites/pokemon/${indexPokemon}.png`;
-        console.log(imageUrl);
     
         this.setState({name: name, imageUrl: imageUrl, indexPokemon: indexPokemon, url: url, isLoading: false})
 
@@ -46,7 +39,6 @@ class Pokemon extends React.Component{
     }
     render(){
 
-        const isLoading = this.state;
 
         
         return (

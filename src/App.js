@@ -5,7 +5,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 
@@ -16,9 +15,13 @@ import PokemonDetails from './components/pokemonDetails';
 
 class App extends React.Component{
 
+  state = {value: ''}
+
   
+ 
 
   render(){
+
 
     return (
 
@@ -29,7 +32,7 @@ class App extends React.Component{
         <Switch>
           <Route path="/:pName" component={PokemonDetails} />
           <Route path="/">
-              <PokemonList />
+              <PokemonList  />
           </Route>
         </Switch>
       </Router>

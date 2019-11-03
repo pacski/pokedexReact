@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Form  = ({ handleSubmit, value}) => (
+
+const Form  = ({ handleSubmit}) => (
     
             <>
             <form className="form-inline justify-content-center mt-3" onSubmit={handleSubmit}>
@@ -8,8 +9,10 @@ const Form  = ({ handleSubmit, value}) => (
             <label htmlFor="filter">Filtrer</label>
             <input id="filter" type="text" name="filter"/>
             </div>
-            <button type="submit" class="btn btn-dark mb-2">Confirm identity</button>
+            <button type="submit" className="btn btn-dark mb-2">Confirm identity</button>
             </form>
+            
+           
             </>
             )
  

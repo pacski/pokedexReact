@@ -39,11 +39,7 @@ class PokemonDetails extends React.Component{
         
 
 
-        console.log("index");
-        console.log(indexPokemon)
-        console.log("index");
-        console.log("cible");
-        console.log("cible");
+       
 
         // recuperation de la taille, du poid et de l'index
         const pokeUrl = `https://pokeapi.co/api/v2/pokemon/${indexPokemon}/`;   
@@ -55,10 +51,7 @@ class PokemonDetails extends React.Component{
         const indexUrl = pokeResponse.data.id
         const imageUrl = `/sprites/sprites/pokemon/${indexUrl}.png`;
 
-        console.log(pokeResponse);
-        console.log(height);
-        console.log(weight);
-        console.log(indexUrl);
+       
 
         // Recupération des 3 premiers moves
 
@@ -66,10 +59,6 @@ class PokemonDetails extends React.Component{
         const move2 = pokeResponse.data.moves[1].move.name;
         const move3 = pokeResponse.data.moves[2].move.name;
 
-        console.log(pokeResponse);
-        console.log("ability cible")
-        console.log(move1);
-        console.log("ability cible")
 
         // Recupération des statistique
 
@@ -80,9 +69,6 @@ class PokemonDetails extends React.Component{
         const attack = pokeResponse.data.stats[4].base_stat
         const hp = pokeResponse.data.stats[5].base_stat
 
-        console.log("statistiques")
-        console.log(speed);
-        console.log("statistiques")
 
         // Recuperation des types
 
@@ -92,7 +78,7 @@ class PokemonDetails extends React.Component{
         var urlType1 = null
         var urlType2 = null
 
-        if(pokeResponse.data.types.length == 1){
+        if(pokeResponse.data.types.length === 1){
              type2 = null
         }
         else {
@@ -222,15 +208,6 @@ class PokemonDetails extends React.Component{
                 urlType2 = null
                 break;
         }
-
-
-        console.log("type")
-        console.log(type1);
-        console.log(type2);
-        console.log("type")
-        
-
-
         this.setState({
             name: name,
             indexPokemon: this.props.indexPokemon,
@@ -278,8 +255,8 @@ class PokemonDetails extends React.Component{
                 <h5 className="card-title text-bold text-danger">{this.state.name}</h5>
                 <p className="card-text">height : {this.state.height} dm</p>
                 <p className="card-text">weight : {this.state.weight}</p>
-                <img src={this.state.urlType1}/>
-                <img src={this.state.urlType2}/>
+                <img alt="" src={this.state.urlType1}/>
+                <img alt="" src={this.state.urlType2}/>
                 <p>move 1 : {this.state.move1}</p>
                 <p>move 2 : {this.state.move2}</p>
                 <p>move 3 : {this.state.move3}</p>
@@ -303,27 +280,6 @@ class PokemonDetails extends React.Component{
         )
     }
 }
-
-{/* <div>
-<img alt="" src={this.state.imageUrl}/> 
-<p>name : {this.state.name}</p>
-<p>height : {this.state.height} dm</p>
-<p>weight : {this.state.weight} hg</p>
-<img src={this.state.urlType1}/>
-<img src={this.state.urlType2}/>
-<p>move 1 : {this.state.move1}</p>
-<p>move 2 : {this.state.move2}</p>
-<p>move 3 : {this.state.move3}</p>
-<hr></hr>
-<h3>Stats :</h3>
-<p>speed : {this.state.speed}</p>
-<p>special-defense : {this.state.special_defense}</p>
-<p>special-attack : {this.state.special_attack}</p>
-<p>defense : {this.state.defense}</p>
-<p>attack : {this.state.attack}</p>
-<p>hp : {this.state.hp}</p> 
-<hr></hr>
-</div> */}
 
 
 export default PokemonDetails
